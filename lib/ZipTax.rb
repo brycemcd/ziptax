@@ -1,5 +1,6 @@
 require "ZipTax/version"
 
 module ZipTax
-  # Your code goes here...
 end
+
+require_relative 'ZipTax/sales_tax'

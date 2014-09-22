@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "ZipTax"
   spec.version       = ZipTax::VERSION
   spec.authors       = ["Bryce McDonnell"]
-  spec.email         = ["bryce@cricketscircle.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.email         = ["bryce@bridgetownint.com"]
+  spec.summary       = %q{Consumes Zip-Tax.com API and returns tax rates}
+  spec.description   = %q{Consumes Zip-Tax.com API and returns tax rates}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,4 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec"
+  spec.add_dependency 'rack'
+
 end
