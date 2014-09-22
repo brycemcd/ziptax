@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'zip_tax/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "ZipTax"
+  spec.name          = "zip_tax"
   spec.version       = ZipTax::VERSION
   spec.authors       = ["Bryce McDonnell"]
   spec.email         = ["bryce@bridgetownint.com"]
   spec.summary       = %q{Consumes Zip-Tax.com API and returns tax rates}
-  spec.description   = %q{Consumes Zip-Tax.com API and returns tax rates}
-  spec.homepage      = ""
+  spec.description   = %q{Fetch calculated sales tax rate at the zip code area of specificity by consuming the Zip-Tax.com API}
+  spec.homepage      = "https://github.com/brycemcd/zip_tax"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -19,8 +19,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
-  spec.add_dependency 'rack'
+  spec.add_development_dependency "rake", "~> 10.3"
+  spec.add_development_dependency "rspec", "~> 3.1"
+  spec.add_dependency 'rack', '~> 1.4'
 
 end
