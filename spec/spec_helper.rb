@@ -1,4 +1,4 @@
-require_relative '../lib/ZipTax'
+require_relative '../lib/zip_tax'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
