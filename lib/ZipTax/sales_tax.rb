@@ -3,9 +3,6 @@ require 'ostruct'
 require 'json'
 
 module ZipTax
-  class Result < OpenStruct
-  end
-
   class SalesTax
     attr_reader :key, :postalcode, :state, :city, :format
 
