@@ -13,7 +13,7 @@ You will need an API key to get started (sadly, no free developer accounts exist
 
 Add this line to your application's Gemfile:
 
-    gem 'ziptax'
+    gem 'ziptax', require: 'zip_tax'
 
 And then execute:
 
