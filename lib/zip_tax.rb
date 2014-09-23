@@ -1,4 +1,7 @@
 module ZipTax
+  class << self
+    attr_accessor :api_key
+  end
 end
 
 require "zip_tax/version"

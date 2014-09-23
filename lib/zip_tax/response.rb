@@ -10,8 +10,14 @@ module ZipTax
       # it is supported in the API
       hsh = JSON.parse(response_hsh)
       resp = ZipTax::Response.new(hsh)
-      resp.results = hsh['results'].collect { |result| ZipTax::Result.new(result) }
+      resp.results = hsh['results'].collect do |result|
+        self.create_result_from_response(result)
+      end
       resp
+    end
+
+    def self.create_result_from_response(result)
+      ZipTax::Result.new(result)
     end
   end
 end

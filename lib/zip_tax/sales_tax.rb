@@ -8,12 +8,12 @@ module ZipTax
 
     BASE_URL="http://api.zip-tax.com/request/v20"
 
-    def initialize(key: nil,
-                   postalcode: nil,
+    def initialize(postalcode: nil,
                    state: nil,
                    city: nil)
 
-      fail ArgumentError, "postalcode and key (api key) are required arguments" if !key || !postalcode
+      fail ArgumentError, 'ZipTax.api_key must be set' if ZipTax.api_key.nil?
+      fail ArgumentError, "postalcode is a required argument" if !postalcode
       @key = key
       @postalcode = postalcode.to_s
       @state = state
@@ -22,7 +22,8 @@ module ZipTax
     end
 
     def request_url
-      query = {key: @key, postalcode: @postalcode, state: @state, city: @city, format: @format}
+      query = {postalcode: @postalcode, state: @state, city: @city, format: @format}
+      query.merge!(key: ZipTax.api_key)
       "#{BASE_URL}?#{Rack::Utils.build_query(query)}"
     end
 
@@ -32,10 +33,11 @@ module ZipTax
       ZipTax::Response.new_from_http_request(resp)
     end
 
-    def self.request_for(key: nil, postalcode: nil, state: nil, city: nil)
+    def self.request_for(postalcode: nil, state: nil, city: nil)
 
-      rt = self.new(key: key, postalcode: postalcode, state: state, city: city)
+      rt = self.new(postalcode: postalcode, state: state, city: city)
       rt.request_tax
     end
+
   end
 end
